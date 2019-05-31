@@ -12,10 +12,10 @@ var letterOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 // This is a function. It runs whenever the user presses a key and needs to update wins, guesses left, and losses.
 document.onkeyup = function (event) {
 userGuess === GuessesSoFar++ 
-uessesSoFar++ = wins++ || losses++ 
+uessesSoFar++ === wins++ || losses++ 
 // print win or loose, and always uessesSoFar
-
-
+console.log(wins++)
+console.log(losses++ )
 for (var i = 0; i = userGuess.length; i++) {
     // for loop (still figuring our how to correctly formulate the opperation)
 }
