@@ -28,7 +28,8 @@ document.onkeyup = function (event) {
 
     yourGuessesSoFar.push(ueserAnswer);
     // display yourGuessesSoFar to page with getElementById and .textContent
-    
+    var yourGuessesSoFarText = document.getElementById("guesses-so-far-text");
+    yourGuessesSoFarText.textContent = yourGuessesSoFar;
 
 
     if (ueserAnswer === computerAnswer) {
@@ -39,6 +40,8 @@ document.onkeyup = function (event) {
  
         // wins = wins + 1
     } else if (guessesLeft > 0) {
+        var guessesLeftText = document.getElementById("gesses-left-text");
+        guessesLeftText.textContent = guessesLeft;
         return;
     }
     else {
