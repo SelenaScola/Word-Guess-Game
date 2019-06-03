@@ -24,6 +24,8 @@ document.onkeyup = function (event) {
     // guessesLeft = guessesLeft - 1;
     guessesLeft--;
     // display guessesLeft to page with getElementById and .textContent
+    var guessesLeftText = document.getElementById("gesses-left-text");
+    guessesLeftText.textContent = guessesLeft;
 
 
     yourGuessesSoFar.push(ueserAnswer);
@@ -31,72 +33,38 @@ document.onkeyup = function (event) {
     var yourGuessesSoFarText = document.getElementById("guesses-so-far-text");
     yourGuessesSoFarText.textContent = yourGuessesSoFar;
 
+    // ueserAnswer resets(guessesLeft to 9 after (guessesLeft === 0)) 
+    
 
     if (ueserAnswer === computerAnswer) {
         wins++;
         var winsText = document.getElementById("wins-text");
         winsText.textContent = wins;
         // winsText.textContent = wins; /prints the text to the dom
- 
+        reset(); 
+
         // wins = wins + 1
     } else if (guessesLeft > 0) {
         var guessesLeftText = document.getElementById("gesses-left-text");
         guessesLeftText.textContent = guessesLeft;
-        return;
+        // return yourGuessesSoFar;
+        
     }
     else {
         losses++;
         var lossesText = document.getElementById("losses-text");
         lossesText.textContent = losses;
-    }
-    
+        reset();
 
 
-//     // print win or loose, and always uessesSoFar
-// // Determines which key was presse
-
-//     for (var i = 0; i = yourGuessesSoFar.length; i++) {
-//         // if (answer = ueserGuess 
-//         // for loop (still figuring our how to correctly formulate the opperation)
-//     }
-//     // is the output of the computer that will need a for loop.
-//     var computerGuess = AssignRandomLetter;
-//     // assign random leter from letter options to the computer guess
-//     var assignRandomLetter = indexOf.letterOptions;
-
-//     // someThing.someWhere[i];
-
-//     // compare userGuess to computer guess === win yay!
-//     if (ueserAnswe === computerAnswer) {
-//         var winsText = document.getElementById("wins-text");
-//         winsText.textContent = "hello"
-//         // incermint wins
-//         var wins = wins++
-//         // add wins to "P" htmlm tag
-//         // reset remaining guesses to 9
-//         remainingGuess + 9;
-//         // reassign new computer guess
-//     }
-
-//     else {
-//         losses++
-//         lossesText = document.getElementById("losses-text");
-
-
-//         text(letters[i]);
-
-
-//     } if (options.indexOf(yourGuessesSoFar) > -1) {
-
-//         function updateScore() {
-//             document.querySelector("#score").innerHTML = "Score: " + score;
-//         }
         
+    }
+    function reset() {
+        guessesLeft = 9;
+        yourGuessesSoFar = []; 
+        computerAnswer = letterOptions[Math.floor(Math.random() * letterOptions.length)];
+        console.log(computerAnswer);
+    }
 
-//         // (# of times the user has guessed the letter correctly)
 
-      
-//     };
 }
-  
-  
